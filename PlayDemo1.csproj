@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UI\Pages\GiftCards\**" />
+    <EmbeddedResource Remove="UI\Pages\GiftCards\**" />
+    <None Remove="UI\Pages\GiftCards\**" />
+    <SpecFlowFeatureFiles Remove="UI\Pages\GiftCards\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="UI\Pages\GiftCards\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\AnimatedGiftCards.feature.cs" />
+    <Compile Remove="Features\StandardGift.feature.cs" />
+    <Compile Remove="Steps\GiftCardsValidationSteps.cs" />
+    <Compile Remove="UI\Pages\HomePage.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Remove="Features\AnimatedGiftCards.feature" />
+    <SpecFlowFeatureFiles Remove="Features\StandardGift.feature" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.44.0" />
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
+    <PackageReference Include="nunit" Version="4.1.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Support\" />
+  </ItemGroup>
+
+</Project>
