@@ -37,7 +37,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Reports\" />
     <Folder Include="Support\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

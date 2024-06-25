@@ -96,6 +96,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
    testRunner.When("enter first name data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 9
+   testRunner.When("click on \'dob\' element and enter birtdate as \"15 Oct. 2000\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 10
+   testRunner.Then("verify birthdate should be in dd/mm/yyyy format", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 11
+   testRunner.When("enter new user data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+   testRunner.When("open new tab and navigate to \"https://www.yopmail.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

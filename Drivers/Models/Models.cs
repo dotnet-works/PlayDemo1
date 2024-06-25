@@ -8,11 +8,28 @@
         WebKit,
     }
 
-    public enum EGiftCardsType
+    public enum ECardsType
     {
         Default,
-        EGiftCards,
-
         // etc..
     }
+
+    public class ConfigData
+    {
+        public string? BrowserName { get; set; }
+
+        public string? FileName { get; set; }
+
+        public string? ProjectRoot  { get; set; }
+
+
+
+
+}
+
+
+
+
+
+
 }

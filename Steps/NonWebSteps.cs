@@ -1,8 +1,10 @@
 ﻿using Microsoft.Playwright;
 using NUnit.Framework;
 using PlayDemo1.Drivers.PlayDriver;
+using PlayDemo1.Drivers.TestConfigs;
 using PlaywrightTests.UI.Pages;
 using TechTalk.SpecFlow;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PlayDemo1.Steps
 {
@@ -48,24 +50,81 @@ namespace PlayDemo1.Steps
             Console.WriteLine($"given {data1} in form of string  {data1 is string}");
         }
 
-        [When(@"switch to tab (.*) as title")]
-        [When(@"switch to tab (.*) as index")]
-        public async Task steps1(string x)
+        //[When(@"switch to tab (.*) as title")]
+        //[When(@"switch to tab (.*) as index")]
+        [When(@"switch to tab having ""([^""]*)"" as title")]
+        [When(@"switch to tab having ""([^""]*)"" as index")]
+        public async Task steps1(string tabLocator)
         {
-            Console.WriteLine("");
+            Console.WriteLine($"Pass Arg: {tabLocator}");
+            int i = 0;
+            bool result = int.TryParse(tabLocator, out i);
+            Console.WriteLine($"given {tabLocator} in form of string  {tabLocator is string}");
+            Console.WriteLine($"given {tabLocator} in form of string  {tabLocator is string} but data is numeric {result}");
+
+            if(tabLocator is string)
+            {
+                Console.WriteLine("Tab Locator is String");
+            }
+            else if(result)
+            {
+                Console.WriteLine("Tab Locator is Numeric");
+            }
+            else
+            {
+                throw new Exception("Data type is not defined for step");
+            }
+
+
+
         }
 
-        [StepArgumentTransformation(@"(having '([^']*)')")]
-        public string SAT1(string d)
+        [When(@"test project config data")]
+        public async Task st12()
         {
-            return null;
+            Console.WriteLine($"Browser :{ProjectDirPaths.GetConfigData.BrowserName}");
+            Console.WriteLine($"File :{ProjectDirPaths.GetConfigData.FileName}");
         }
 
-        [StepArgumentTransformation(@"(having (//d+))")]
-        public string SAT2(int d)
-        {
-            return null;
 
+
+
+
+
+
+
+
+
+        //[StepArgumentTransformation(@"(having '([^']*)')")]
+        //public string SAT1(string tabtitle)
+        //{
+        //    return tabtitle;
+        //}
+
+        //[StepArgumentTransformation(@"(having (//d+))")]
+        //public int SAT2(int idxNum)
+        //{
+        //    return idxNum;
+
+        //}
+
+
+        //[When(@"switch to tab having (.*)")]
+        ////[When(@"switch to tab having index is 1")]
+        //public void tabstep1(string x)
+        //{
+        //    Console.WriteLine(x);
+        //}
+
+        [StepArgumentTransformation(@"title as ""([^""]*)""")]
+        public string SAT3(string a)
+        {
+            return a;
         }
+
+
+
+
+
     }
 }

@@ -1,15 +1,12 @@
 ﻿using Microsoft.Playwright;
 using PlayDemo1.Drivers.PlayDriver;
 using PlaywrightTests.UI.Pages;
-using PlaywrightTests.UI.Pages.SocialPages;
-using TechTalk.SpecFlow;
 
 namespace PlayDemo1.Steps
 {
     [Binding]
     public sealed class CommonSteps
     {
-        //private readonly DemoPage demoPage = null;
         private readonly BasePage basePage = null;
         private readonly ScenarioContext scenarioContext = null;
         private IPage page;

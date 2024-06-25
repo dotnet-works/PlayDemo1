@@ -37,6 +37,8 @@ namespace PlaywrightTests.UI.Pages.SocialPages
         public ILocator TXT_UserName => _page.Locator("[name=\"username\"]");
         public ILocator TXT_Password => _page.Locator("[name=\"password\"]");
 
+        public ILocator TXT_BirthDate => _page.Locator("[name=\"birthdate\"]");
+
         public ILocator RD_Gender => _page.Locator("//input[@name='gender'and @value='male']");
         public ILocator CK_Agree => _page.Locator("[name=\"gdpr_agree\"]");
         public ILocator BTN_Submit => _page.Locator("input#ossn-submit-button");
