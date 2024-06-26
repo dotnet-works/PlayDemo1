@@ -6,6 +6,7 @@ using NUnit.Framework;
 using PlayDemo1.Drivers.PlayDriver;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text.RegularExpressions;
+using PlayDemo1.UI.Pages.SocialPages;
 
 namespace PlayDemo1.Steps
 {
@@ -14,6 +15,7 @@ namespace PlayDemo1.Steps
     {
         private readonly DemoPage demoPage = null;
         private LoginPage loginPage;// = null;
+        private UserPage userPage;
         private readonly ScenarioContext scenarioContext = null;
         private IPage page;
 
@@ -21,7 +23,8 @@ namespace PlayDemo1.Steps
         {
             page = driver.Page;
             demoPage = new DemoPage(driver.Page);
-            //this.loginPage = new LoginPage(driver.Page);
+            this.loginPage = new LoginPage(driver.Page);
+            this.userPage = new UserPage(driver.Page);
             this.scenarioContext = scenarioContext;
         }
 
@@ -238,6 +241,25 @@ namespace PlayDemo1.Steps
 
 
         }
+
+        [When(@"login as admin using '(.*)' and '(.*)' credentials")]
+        public async Task loginToApp(string uname,string pw)
+        {
+            //await loginPage.BTN_Login.ClickAsync();
+            await page.GetByRole(AriaRole.Link, new() { Name = "Login" }).ClickAsync();
+            await page.Locator("[name=\"username\"]").ClearAsync();
+            await page.Locator("[name=\"username\"]").FillAsync(uname);
+
+            await page.Locator("[name=\"password\"]").ClearAsync();
+            await page.Locator("[name=\"password\"]").FillAsync(pw);
+            await page.GetByRole(AriaRole.Button, new() { Name = "Login" }).ClickAsync();
+            await userPage.UserLoginSuccessfully();
+        }
+
+
+
+
+
 
         //[When(@"^(?i)Switch to new tab")]
         //public async Task tabSwitch()

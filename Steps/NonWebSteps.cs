@@ -74,16 +74,21 @@ namespace PlayDemo1.Steps
             {
                 throw new Exception("Data type is not defined for step");
             }
-
-
-
         }
+
+        [When(@"wait for (.*) secs")]
+        [Then(@"wait for (.*) secs")]
+        public async Task waitfor(int wait)
+        {
+            Thread.Sleep(wait);
+        }
+
 
         [When(@"test project config data")]
         public async Task st12()
         {
-            Console.WriteLine($"Browser :{ProjectDirPaths.GetConfigData.BrowserName}");
-            Console.WriteLine($"File :{ProjectDirPaths.GetConfigData.FileName}");
+            Console.WriteLine($"Browser :{TestConfigData.GetConfigData.BrowserName}");
+            Console.WriteLine($"File :{TestConfigData.GetConfigData.IsHeadless}");
         }
 
 

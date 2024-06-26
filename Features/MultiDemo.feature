@@ -21,8 +21,23 @@ Scenario: Fail Scenario
 Scenario: Test Config Data
 	When test project config data
 
-
-
+@nonweb
+Scenario: Step Table Example1
+   When some data table1
+           | Data1 | Value1 |
+           | dat1  | val1   |
+   When creating instance of this table1
+           | FirstName | LastName | Age |
+           | John      | Doe      | 30  |
+   When creating instance of this table2
+           | FirstName | LastName | Age |
+           | Rajeev    | Awana    | 30  |
+           | Arrav     | Singh    | 13  |
+   When create a dictionary of table data1
+           | Key       | Value  |
+           | FirstName | value1 |
+           | LastName  | value2 |
+           | Age       | value3 |
 
 
 

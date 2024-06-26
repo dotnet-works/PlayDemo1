@@ -3,6 +3,7 @@
     using System;
     using System.Threading.Tasks;
     using Microsoft.Playwright;
+    using PlayDemo1.Drivers.TestConfigs;
 
     //public class Driver : IDisposable
     //{
@@ -31,7 +32,7 @@
 
 
 
-    //***  Code Enhencement              ***//
+    //***  Code Enhencement V1              ***//
 
     public class Driver : IDisposable
     {
@@ -51,7 +52,9 @@
 
             browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
-                Headless = false,
+                Channel= TestConfigData.GetConfigData.BrowserName,
+                //Headless = false,
+                Headless =TestConfigData.GetConfigData.IsHeadless,
             });
 
             context = await browser.NewContextAsync();

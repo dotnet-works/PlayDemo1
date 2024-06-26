@@ -148,6 +148,79 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Step Table Example1")]
+        [NUnit.Framework.CategoryAttribute("nonweb")]
+        public void StepTableExample1()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "nonweb"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Step Table Example1", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 25
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Data1",
+                            "Value1"});
+                table1.AddRow(new string[] {
+                            "dat1",
+                            "val1"});
+#line 26
+   testRunner.When("some data table1", ((string)(null)), table1, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "Age"});
+                table2.AddRow(new string[] {
+                            "John",
+                            "Doe",
+                            "30"});
+#line 29
+   testRunner.When("creating instance of this table1", ((string)(null)), table2, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "Age"});
+                table3.AddRow(new string[] {
+                            "Rajeev",
+                            "Awana",
+                            "30"});
+                table3.AddRow(new string[] {
+                            "Arrav",
+                            "Singh",
+                            "13"});
+#line 32
+   testRunner.When("creating instance of this table2", ((string)(null)), table3, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Key",
+                            "Value"});
+                table4.AddRow(new string[] {
+                            "FirstName",
+                            "value1"});
+                table4.AddRow(new string[] {
+                            "LastName",
+                            "value2"});
+                table4.AddRow(new string[] {
+                            "Age",
+                            "value3"});
+#line 36
+   testRunner.When("create a dictionary of table data1", ((string)(null)), table4, "When ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

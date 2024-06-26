@@ -67,16 +67,16 @@ namespace PlayDemo1.Drivers.TestConfigs
 
         }
 
-        public static ConfigData GetConfigData
-        {
-            get
-            {
-                var f = File.ReadAllText("AppConfig.json");
-                ConfigData x = JsonConvert.DeserializeObject<ConfigData>(f)!;
-                //Console.WriteLine($"{x.BrowserName}");
-                return x;
-            }
-        }
+        //public static ConfigData GetConfigData
+        //{
+        //    get
+        //    {
+        //        var f = File.ReadAllText("AppConfig.json");
+        //        ConfigData x = JsonConvert.DeserializeObject<ConfigData>(f)!;
+        //        //Console.WriteLine($"{x.BrowserName}");
+        //        return x;
+        //    }
+        //}
 
         
 

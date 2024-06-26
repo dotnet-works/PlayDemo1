@@ -1,6 +1,9 @@
-﻿using Microsoft.Playwright;
+﻿using Allure.Net.Commons;
+using Microsoft.Playwright;
 using PlayDemo1.Drivers.PlayDriver;
+using PlayDemo1.Drivers.TestConfigs;
 using PlaywrightTests.UI.Pages;
+using System.Text;
 
 namespace PlayDemo1.Steps
 {
@@ -49,6 +52,30 @@ namespace PlayDemo1.Steps
             await page.CloseAsync();
             Thread.Sleep(3000);
         }
+
+
+        [When("allure sample attachments")]
+        public async Task TestLabels()
+        {
+            AllureApi.AddAttachment("../../../TestData/alluredata.txt","text/plain",Encoding.UTF8.GetBytes("This is the sample text file content."));
+            
+            var filePath = ProjectDirPaths.ScreenShotPath + "sample.png";
+            var filex = await page.ScreenshotAsync(new() { Path = filePath });
+            AllureApi.AddAttachment("image1.png","image/png",File.ReadAllBytes(filePath));
+
+            AllureApi.AddAttachment("../../../TestData/data1.json", "text/json");
+
+            //AllureApi.AddAttachment("image2.png","image/png","/path/to/image2.png");
+
+            AllureApi.AddAttachment("alluredata.txt", "text/plain", "../../../TestData/alluredata.txt");
+
+        }
+
+
+
+
+
+
 
         public async Task<IPage> SwitchTabs(string tabTitle, IBrowserContext BrowserCTX)
         {

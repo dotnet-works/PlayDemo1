@@ -14,18 +14,7 @@
         // etc..
     }
 
-    public class ConfigData
-    {
-        public string? BrowserName { get; set; }
-
-        public string? FileName { get; set; }
-
-        public string? ProjectRoot  { get; set; }
-
-
-
-
-}
+    
 
 
 

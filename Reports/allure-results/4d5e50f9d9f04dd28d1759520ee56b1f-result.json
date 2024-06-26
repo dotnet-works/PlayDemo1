@@ -1,0 +1,154 @@
+{
+  "uuid": "df580adb-1f2a-4c8c-8b84-4a3af417320e",
+  "historyId": "ff899d272e3360806ae2929bbfb1e24b",
+  "testCaseId": "beac4d4da36fcf88ec73cd1f5ba1c10f",
+  "fullName": "PlayDemo1/Features/MultiDemo/Step Table Example1",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#3"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-SRRVDGO"
+    },
+    {
+      "name": "language",
+      "value": "C#"
+    },
+    {
+      "name": "framework",
+      "value": "SpecFlow"
+    },
+    {
+      "name": "feature",
+      "value": "MultiDemo"
+    },
+    {
+      "name": "tag",
+      "value": "nonweb"
+    }
+  ],
+  "links": [],
+  "name": "Step Table Example1",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "When  some data table1",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "running",
+      "steps": [
+        {
+          "name": "When  creating instance of this table1",
+          "status": "none",
+          "statusDetails": {
+            "known": false,
+            "muted": false,
+            "flaky": false
+          },
+          "stage": "running",
+          "steps": [
+            {
+              "name": "When  creating instance of this table2",
+              "status": "none",
+              "statusDetails": {
+                "known": false,
+                "muted": false,
+                "flaky": false
+              },
+              "stage": "running",
+              "steps": [
+                {
+                  "name": "When  create a dictionary of table data1",
+                  "status": "none",
+                  "statusDetails": {
+                    "known": false,
+                    "muted": false,
+                    "flaky": false
+                  },
+                  "stage": "running",
+                  "steps": [],
+                  "attachments": [],
+                  "parameters": [
+                    {
+                      "name": "FirstName",
+                      "value": "value1",
+                      "excluded": false
+                    },
+                    {
+                      "name": "LastName",
+                      "value": "value2",
+                      "excluded": false
+                    },
+                    {
+                      "name": "Age",
+                      "value": "value3",
+                      "excluded": false
+                    }
+                  ],
+                  "start": 1719413826354,
+                  "stop": 0
+                }
+              ],
+              "attachments": [
+                {
+                  "name": "table",
+                  "source": "38026f55-5e81-4430-be03-8831b08a3744-attachment.csv",
+                  "type": "text/csv"
+                }
+              ],
+              "parameters": [],
+              "start": 1719413826335,
+              "stop": 0
+            }
+          ],
+          "attachments": [],
+          "parameters": [
+            {
+              "name": "FirstName",
+              "value": "John",
+              "excluded": false
+            },
+            {
+              "name": "LastName",
+              "value": "Doe",
+              "excluded": false
+            },
+            {
+              "name": "Age",
+              "value": "30",
+              "excluded": false
+            }
+          ],
+          "start": 1719413826301,
+          "stop": 0
+        }
+      ],
+      "attachments": [],
+      "parameters": [
+        {
+          "name": "dat1",
+          "value": "val1",
+          "excluded": false
+        }
+      ],
+      "start": 1719413826268,
+      "stop": 0
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1719413826234,
+  "stop": 1719413826357
+}
